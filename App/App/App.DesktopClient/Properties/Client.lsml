@@ -35,13 +35,22 @@
         Target="ServiceInterface:LightSwitchServiceApplicationGroup" />
     </GlobalAttributeGroup.Attributes>
   </GlobalAttributeGroup>
+  <Application.Commands>
+    <ApplicationCommand
+      Name="ScreenCommandShowAnimalScreen"
+      Target="!module/Methods[ShowAnimalScreen]" />
+  </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
-      Name="Tasks">
+      Name="Tasks"
+      DefaultItem="!module/NavigationItems[Tasks]/Children[AnimalScreen]">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="Tasks" />
       </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="AnimalScreen"
+        Command="!module/Commands[ScreenCommandShowAnimalScreen]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">
